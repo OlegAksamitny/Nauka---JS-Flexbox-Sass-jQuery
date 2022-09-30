@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Domek</title>
+    <style>
+        span {
+            display: inline-block;
+            background-color: brown;
+            margin-left: 150px;
+            margin-top: 50px;
+            color: white;
+            padding: 15px 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .dom {
+            position: absolute;
+            background-color: brown;
+            width: 0;
+            height: 0;
+            left: 50px;
+            bottom: 50px;
+            transition: 1s;
+            transform: rotate(0deg);
+        }
+
+        .door {
+            position: absolute;
+            background-color: rgb(12, 14, 5);
+            width: 0;
+            height: 0;
+            left: 50px;
+            bottom: 50px;
+            transition: 1s .15s;
+            transform: rotate(0deg);
+        }
+
+        .window1 {
+            position: absolute;
+            background-color: rgb(213, 248, 40);
+            width: 0;
+            height: 0;
+            left: 50px;
+            bottom: 50px;
+            transition: 1s .2s;
+            transform: rotate(0deg);
+        }
+        .window2 {
+            position: absolute;
+            background-color: rgb(213, 248, 40);
+            width: 0;
+            height: 0;
+            left: 50px;
+            bottom: 50px;
+            transition: 1s .25s;
+            transform: rotate(0deg);
+        }
+
+        .rooftop {
+            position: absolute;
+            border-left: 0px solid transparent;
+            border-right: 0px solid transparent;
+            border-bottom: 0px solid black;    
+            left: 50px;
+            bottom: 50px;
+            transition: 1s .3s;
+            transform: rotate(0deg);
+        }
+        .rura {
+            position: absolute;
+            z-index: -1;
+            background-color: rgb(65, 63, 111);
+            width: 0;
+            height: 0;
+            left: 50px;
+            bottom: 50px;
+            transition: 1s .35s;
+            transform: rotate(0deg);
+        }
+        
+
+       span:hover~.dom {
+            left: 40vw;
+            bottom: 20vh;
+            width: 400px;
+            height: 200px;
+            transform: rotate(360deg);
+        }
+
+        span:hover~.door {
+            left: 57vw;
+            bottom: 20vh;
+            width: 70px;
+            height: 90px;
+            transform: rotate(-360deg);
+        }
+
+        span:hover~.window1 {
+            left: 45vw;
+            bottom: 32vh;
+            width: 65px;
+            height: 70px;
+            transform: rotate(360deg);
+        }
+        span:hover~.window2 {
+            left: 70vw;
+            bottom: 32vh;
+            width: 65px;
+            height: 70px;
+            transform: rotate(-360deg);
+        }
+
+        span:hover~.rooftop {
+            left: 40vw;
+            bottom: 47vh;
+            border-left: 200px solid transparent;
+            border-right: 200px solid transparent;
+            border-bottom: 150px solid black;
+            transform: rotate(-360deg);
+        }
+
+        span:hover~.rura {
+            z-index: -1;
+            left: 70vw;
+            bottom: 50vh;
+            width: 55px;
+            height: 70px;
+            transform: rotate(-360deg);
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <span>BUDUJEMY</span>
+    <div class="dom"></div>
+    <div class="door"></div>
+    <div class="window1"></div>
+    <div class="window2"></div>
+    <div class="rooftop"></div>
+    <div class="rura"></div>
+</body>
+
+</html>
