@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zegar</title>
+    <style>
+        .clock {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 40vw;
+            height: 40vw;
+            border-radius: 50%;
+            background-color: red;
+        }
+
+        .hand {
+            position: absolute;
+            top: 5%;
+            /* left: calc(50% - 3px); */
+            left: 50%;
+            width: 6px;
+            height: 45%;
+            /* margin-left: calc(50% - 3px);
+            margin-top: 5%; */
+            background-color: #000;
+            border-radius: 10% 50% 10% 50%;
+            transform: rotate(0deg) translateX(-50%);
+            transform-origin: 50% 100%;
+            transition: 60s steps(60);
+        }
+
+        .clock:hover .hand {
+            transform: rotate(360deg) translateX(-50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="clock">
+        <div class="hand"></div>
+    </div>
+</body>
+
+</html>
