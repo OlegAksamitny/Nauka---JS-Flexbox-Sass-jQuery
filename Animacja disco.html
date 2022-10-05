@@ -1,0 +1,88 @@
+<!-- Animacja trwa 1 sekundę z wyjątkiem ostatniego elementu w którym trwa 3 sekund (ta sama animacja, ale dłuższa) -->
+<!-- ostatni element ma odwrócony kierunek (reverse) -->
+<!-- Kolory elementów: lewy górny róg: czarny, prawy górny róg: czerwony, prawy dolny róg: zielony i lewy dolny róg: niebieski -->
+<!-- Zrób tylko jedną animację (keyframes) -->
+<!-- Opóźnienie .2s (kaażdy kolejny element) -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <title>Document</title>
+ <style>
+  div {
+   height: 30px;
+   width: 30px;
+   background-color: black;
+   position: absolute;
+   top: 0;
+   left: 0;
+   animation: disco 1s infinite ease;
+  }
+  div:nth-of-type(1) {
+    animation-delay: .2s;
+  }
+  div:nth-of-type(2) {
+    animation-delay: .4s;
+  }
+  div:nth-of-type(3) {
+    animation-delay: .6s;
+  }
+  div:nth-of-type(4) {
+    animation-delay: .8s;
+  }
+  div:nth-of-type(5) {
+    animation-delay: 1s;
+  }
+  div:nth-of-type(6) {
+    animation-duration: 3s;
+    animation-delay: 2s;
+    animation-direction: reverse;
+  }
+
+  @keyframes disco {
+    0% {
+        top: 0;
+        left: 0;
+        background-color: black;
+    }
+    25% {
+        top: 0;
+        left: calc(100% - 30px);
+        background-color: red;
+    }
+
+    50% {
+        top: calc(100% - 30px);
+        left: calc(100% - 30px);
+        background-color: green;
+    }
+    75% {
+        top: calc(100% - 30px);
+        left: 0;
+        background-color: blue;
+    }
+
+    100% {
+        top: 0;
+        left: 0;
+        background-color: black;
+    }
+    
+
+  }
+ </style>
+</head>
+
+<body>
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div>
+
+</body>
+
+</html>
