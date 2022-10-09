@@ -1,0 +1,172 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <title>gra pong</title>
+
+ <style>
+  html {
+   /* stół */
+   --tableWidth: 700px;
+   --tableHeight: 400px;
+   --tableColor: #333;
+   /* rakietka */
+   --paddleWidth: 25px;
+   --paddleHeight: 80px;
+   --paddleColor: yellow;
+   /* piłka */
+   --ballSize: 20px;
+   --ballColor: white;
+   /* pozycja */
+   --paddleFromEdge: 50px;
+   /* czas animacji */
+   --animationTime: 5s;
+  }
+  
+
+  .table,
+  .ball,
+  .paddle,
+  .result {
+   position: absolute;
+  }
+
+  .table {
+   width: var(--tableWidth);
+   height: var(--tableHeight);
+   background-color: var(--tableColor);
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+  }
+
+  .ball {
+   width: var(--ballSize);
+   height: var(--ballSize);
+   top: calc(50% - var(--ballSize)/2);
+   left: calc(50% - var(--ballSize)/2);
+   background-color: var(--ballColor);
+   border-radius: 50%;
+   animation: ballMove var(--animationTime) linear both;
+  }
+
+  .paddle {
+   width: var(--paddleWidth);
+   height: var(--paddleHeight);
+   background-color: var(--paddleColor);
+  }
+
+  /* rakietka lewa strona */
+
+  .player {
+   top: calc(50% - var(--paddleHeight)/2);
+
+   left: var(--paddleFromEdge);
+   /* utwórz animację ruchu dla paletki po lewej stronie */
+   animation: playerPaddle var(--animationTime) linear both;
+  }
+
+  /* prawa strona */
+  .ai {
+   top: calc(50% - var(--paddleHeight)/2);
+   right: var(--paddleFromEdge);
+   /* utwórz animację ruchu dla paletki po prawej stronie */
+   animation: aiPaddle var(--animationTime) linear both;
+  }
+
+  .result {
+
+   width: 100%;
+   left: 0;
+   top: 10%;
+   text-transform: uppercase;
+   text-align: center;
+   font-family: sans-serif;
+   color: black;
+   transform: scale(0);
+   /* Utwórz animację, któa pokaże wynik po zakończeniu gry */
+   animation: showResult 3s 5s linear;
+  }
+  
+
+  @keyframes ballMove {
+    0% {
+      top: calc(50% - var(--ballSize)/2);
+      left: calc(50% - var(--ballSize)/2);
+    }
+    18% {
+      top: 70% ;
+      left: calc(var(--tableWidth) - 95px);
+    }
+    30% {
+      top: calc(100% - var(--ballSize));
+      left: calc(var(--tableWidth) - 250px);
+    }
+    64% {
+      top: 20%;
+      left: 75px;
+    }
+    80% {
+      top: 0;
+      left: 40%;
+    }
+    100% {
+      top: 20%;
+      left: 100%;
+    } 
+  }
+
+  @keyframes playerPaddle {
+    46% {
+      top: calc(50% - var(--paddleHeight)/2);
+    }
+    64% {
+      top: calc(20% - var(--paddleHeight)/2 + var(--ballSize)/2);
+    }
+    85% {
+      top: calc(50% - var(--paddleHeight)/2);
+    }
+    100% {
+      top: calc(50% - var(--paddleHeight)/2);
+    }
+  }
+
+  @keyframes aiPaddle {
+    18% {
+      top: calc(70% - var(--paddleHeight)/2 + var(--ballSize)/2);
+    }
+    36% {
+      top: calc(50% - var(--paddleHeight)/2);
+    }
+    90% {
+      top: calc(50% - var(--paddleHeight)/2);
+    }
+    100% {
+      top: 20%;
+    } 
+  }
+
+  @keyframes showResult {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+ </style>
+</head>
+
+<body>
+ <div class="table">
+  <div class="ball"></div>
+  <div class="paddle player"></div>
+  <div class="paddle ai"></div>
+ </div>
+ <h1 class="result">wygrałeś!</h1>
+</body>
+
+</html>
