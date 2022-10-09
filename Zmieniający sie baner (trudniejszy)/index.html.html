@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Slider</title>
+ <style>
+   * {
+   margin: 0;
+   padding: 0;
+   }
+
+   header {
+   height: 600px;
+   position: relative;
+   overflow: hidden;
+  } 
+
+  img {
+   position: absolute;
+   animation: slider 15s linear infinite;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%,-50%);
+   min-height: 100%;
+   min-width: 100%;
+  }
+
+  img:nth-last-of-type(2) {
+    animation-delay: 5s;
+  }
+
+  img:nth-last-of-type(3) {
+    animation-delay: 10s;
+  }
+
+  h1 {
+   position: absolute;
+   font-size: 60px;
+   background-color: rgba(0, 0, 0, 0.8);
+   font-family: 'open sans', sans-serif;
+   color: white;
+   padding: 10px 40px;
+   animation: txt 15s linear infinite both;
+  } 
+  h1:nth-of-type(3) {
+    top: 10%;
+    left: 25%;
+}
+  h1:nth-of-type(2) {
+    animation-delay: 5s;
+    top: 80%;
+    left: 60%;
+  }
+  h1:nth-of-type(1) {
+    animation-delay: 10s;
+    top: 60%;
+    left: 10%;
+  }
+
+ @keyframes slider {
+    0% {
+        opacity: 0;
+    }
+    3% {
+        opacity: 1;
+    }
+    33.33% {
+        opacity: 1;
+    }
+    36.33% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+ }
+ @keyframes txt {
+    0% {
+        opacity: 0;
+    }
+    4% {
+        opacity: 0;
+    }
+    9% {
+        opacity: 1;
+    }
+    27.33% {
+        opacity: 1;
+    }
+    33.33% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+ }
+ </style>
+
+</head>
+
+<body>
+ <header>
+  <img src="pic1.jpg" alt="">
+  <img src="pic2.jpg" alt="">
+  <img src="pic3.jpg" alt="">
+  <h1>Japonia</h1>
+  <h1>Polska</h1>
+  <h1>Kanada</h1>
+ </header>
+</body>
+
+</html>
