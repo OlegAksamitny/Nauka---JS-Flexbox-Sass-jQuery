@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Kalkulator</title>
+ <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    .panel {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: space-between;
+        justify-content: space-between;
+
+        flex-basis: 40vw;
+        height: 80vh;
+
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .panel > div.result {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        
+        flex-basis: 100%;
+        height: 13vh;
+
+        padding: 2%;
+        background-color: black;
+        font-size: 40px;
+    }
+
+    .panel > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        flex-basis: 30%;
+        height: 10vh;
+
+        font-size: 30px;
+        background-color: rgb(25, 0, 255);
+        border-radius: 10px;
+    }
+     .panel div:nth-of-type(17) {
+        flex-basis: 47.5%;
+    }
+    .panel div:nth-of-type(18) {
+        flex-basis: 47.5%;
+    } 
+
+    .panel > div:hover {
+        background-color: rgb(237, 79, 79);
+    }
+    div.result:hover {
+        background-color: black;
+    }
+
+ </style>
+</head>
+
+<body>
+    <div class="panel">
+        <div class="result">2 343.99</div>
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+        <div>7</div>
+        <div>8</div>
+        <div>9</div>
+        <div>+</div>
+        <div>0</div>
+        <div>-</div>
+        <div>/</div>
+        <div>.</div>
+        <div>*</div>
+        <div>C</div>
+        <div>=</div>
+    </div>
+</body>
+
+</html>
