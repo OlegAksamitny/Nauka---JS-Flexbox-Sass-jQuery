@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Galeria Flexbox</title>
+ <style>
+  * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  }
+   body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+   }
+   
+   h1 {
+    background-color: black;
+    color: white;
+    width: 100%;
+    line-height: 10vh;
+    text-align: center;
+    margin-bottom: 4vh;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+   }
+
+   section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   }
+
+   div {
+    margin-bottom: 3vh;
+   }
+
+   img {
+    height: 70vw;
+   }
+
+   @media (orientation: landscape) {
+    section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    div {
+        margin: 3vw;
+    }
+    img {
+        height: 30vw;
+    }
+   }
+
+   @media (orientation: portrait) and (min-width: 768px) {
+    h1 {
+        font-size: 50px;
+    }
+    section {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    div {
+        margin: 2vw;
+    }
+    img {
+        height: 32vw;
+    }
+   }
+
+   @media (orientation: landscape) and (min-width: 1024px) {
+    h1 {
+        font-size: 50px;
+        line-height: 100px;
+    }
+
+    div {
+        margin: 1vw;
+    }
+    img {
+        height: 22vw;
+    }
+   }
+
+   @media (orientation: landscape) and (min-width: 1280px) {    
+    div {
+        margin: 1vw;
+    }
+    img {
+        height: 17vw;
+    }
+   }
+
+ </style>
+</head>
+
+<body>
+ <h1>GALERIA</h1>
+ <section>
+  <div>
+   <img src="img1.jpg" alt="">
+  </div>
+  <div>
+   <img src="img2.jpg" alt="">
+  </div>
+  <div>
+   <img src="img3.jpg" alt="">
+  </div>
+  <div>
+   <img src="img4.jpg" alt="">
+  </div>
+
+  <div>
+   <img src="img1.jpg" alt="">
+  </div>
+  <div>
+   <img src="img2.jpg" alt="">
+  </div>
+  <div>
+   <img src="img3.jpg" alt="">
+  </div>
+  <div>
+   <img src="img4.jpg" alt="">
+  </div>
+
+  <div>
+    <img src="img1.jpg" alt="">
+   </div>
+   <div>
+    <img src="img2.jpg" alt="">
+   </div>
+   <div>
+    <img src="img3.jpg" alt="">
+   </div>
+   <div>
+    <img src="img4.jpg" alt="">
+   </div>
+ </section>
+</body>
+
+</html>
