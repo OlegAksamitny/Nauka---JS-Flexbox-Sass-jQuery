@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-columns: 1fr 200px;
+            grid-template-rows: 200px 100px 1fr 50px;
+            grid-template-areas: 
+            "baner baner"
+            "menu menu"
+            "blog column"
+            "footer footer";
+            max-width: 1200px;
+            min-height: 100vh;
+            font-size: 40px;
+            font-family: arial;
+            margin: 0 auto;
+        }
+
+        header {
+            grid-area: baner;
+            background-color: aqua;
+        }
+
+        nav {
+            grid-area: menu;
+            background-color: chocolate;
+        }
+        
+        main {
+            background-color: darkgoldenrod;
+        }
+
+        aside {
+            background-color: crimson;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: dodgerblue;
+        }
+
+        @media (max-width: 1024px) {
+            body {
+            grid-template-columns: 1fr;
+            grid-template-rows: 50px 200px 3fr 1fr 50px;
+            grid-template-areas: 
+            "menu"
+            "baner"
+            "blog"
+            "column"
+            "footer";
+            }
+        }
+        
+    </style>
+</head>
+<body>   
+    <header>Header</header>
+    <nav>Nawigacja</nav>
+    <main>Główna część</main>
+    <aside>Kolumna</aside>
+    <footer>Stopka</footer>
+</body>
+</html>
