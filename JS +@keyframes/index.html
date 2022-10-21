@@ -1,0 +1,61 @@
+<!-- zadanie2 wersja z jquery i czystym js -->
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Dodaj kwadrat - JavaScript</title>
+ <style>
+  * {
+   margin: 0;
+   padding: 0;
+  }
+
+  body {
+   padding: 20px 50px;
+  }
+
+  button {
+   border: 3px solid black;
+   text-transform: uppercase;
+   padding: 15px 20px;
+   color: black;
+   background-color: transparent;
+   margin: 0 30px 30px 0;
+   font-size: 40px;
+  }
+
+  div.box {
+   float: left;
+   background-color: cadetblue;
+   width: 100px;
+   height: 100px;
+   animation: create 0.2s linear both;
+  }
+
+  @keyframes create {
+    0% {
+        width: 0;
+        height: 0;
+        transform: rotate(0);
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+        transform: rotate(360deg);
+    }
+  }
+ </style>
+</head>
+
+<body>
+ <button class="js">Dawaj JS!</button>
+ <br>
+ 
+ <script src="js.js"></script>
+
+
+</body>
+
+</html>
