@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Wybierz kolor</title>
+ <style>
+  body {
+   background-color: black;
+  }
+
+  section {
+   display: flex;
+   height: 64px;
+  }
+
+  div {
+   flex-grow: 1;
+   border: 2px solid black;
+   font-size: 60px;
+   line-height: 60px;
+   text-align: center;
+   cursor: pointer;
+   background-color: #fff;
+
+  }
+
+  .orange {
+   background-color: orange;
+  }
+
+  .green {
+   background-color: green;
+  }
+
+  p {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 50px;
+   text-transform: uppercase;
+   font-family: arial;
+   color: white;
+  }
+ </style>
+</head>
+
+<body>
+
+ <section>
+  <div class="orange interface"></div>
+  <div class="green interface"></div>
+  <div class="increase interface">+</div>
+  <div class="move interface">-></div>
+ </section>
+
+ <p class="text">Tekst</p>
+
+ <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+ <script src="exercise.js"></script>
+</body>
+
+</html>
