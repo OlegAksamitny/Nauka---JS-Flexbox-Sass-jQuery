@@ -1,0 +1,34 @@
+.burger {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font-size: 60px;
+    line-height: 50px;
+    transition: .3s linear;
+}
+
+.burger:hover {
+    cursor: pointer;
+}
+
+aside {
+    position: absolute;
+    top: 0;
+    left: -150px;
+    height: 100vh;
+    width: 150px;
+    background-color: black;
+    transition: 0.3s;
+}
+
+.fa-solid {
+    display: none;
+}
+
+i.show {
+    display: block;
+}
+
+aside.show {
+    left: 0;
+}
