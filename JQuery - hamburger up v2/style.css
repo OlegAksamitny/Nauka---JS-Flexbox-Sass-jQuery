@@ -1,0 +1,44 @@
+body {
+    min-height: 200vh;
+}
+
+.wrapper {
+    margin: 10px 90px;
+}
+
+.wrapper p {
+    font-size: 18px;
+    line-height: 200%;
+}
+
+.burger {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    font-size: 50px;
+    z-index: 1;
+}
+
+i.off {
+    display: none;
+}
+
+i.fa-angle-up {
+    color: white;
+    left: 50px;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    /* right: 0; */
+    width: 100%;
+    top: 0;
+    height: 30vh;
+    background-color: #000;
+    transition: .2s;
+}
+
+nav.off {
+    top: -300px;
+}
