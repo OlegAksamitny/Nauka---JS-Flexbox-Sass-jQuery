@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            pad: 0;
+        }
+
+        header {
+            height: 150vh;
+            background-image: url("img.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        main {
+            height: 150vh;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <header></header>
+    <main></main>
+    <script src="JQuery.js"></script>
+    <script>
+        const $doc = $(document);
+        const $header = $('header');
+        const $main = $('main');
+        $doc.on('scroll', function(){
+           const scrollPos = $doc.scrollTop();
+        //    const mainOffSet = $main.offset().top;
+           const headerHeight = $header.outerHeight();
+           $header.css({
+            // 'opacity' :  1 - scrollPos / headerHeight,
+            'filter' : 'grayscale(' + 2 * scrollPos / headerHeight + ')'
+        })
+        })
+
+    </script>
+</body>
+</html>
