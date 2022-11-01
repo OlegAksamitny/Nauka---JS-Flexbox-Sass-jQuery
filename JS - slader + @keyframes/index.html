@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Slider/Banner</title>
+ <link href="https://fonts.googleapis.com/css?family=Oswald&amp;subset=latin-ext" rel="stylesheet">
+
+ <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        font-family: 'Oswald';
+    }
+
+    .team {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        background-color: #ccc;
+    }
+
+    .team .color {
+        position: absolute;
+        bottom: 0;
+        right: -5%;
+        height: 35%;
+        z-index: 1;
+        animation: color 4s linear infinite;
+    }
+    .team .gray {
+        position: absolute;
+        bottom: 0;
+        left: -70%;
+        height: 110%;
+        opacity: .2;
+        animation:gray 4s linear infinite;
+    }
+
+    .team .member {
+        position: absolute;
+        top: 10%;
+        left: 0;
+        text-align: center;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        animation: text 4s linear infinite;
+    }
+
+    .team h1 {
+        font-size: 3rem;
+    }
+    .team h2 {
+        font-size: 1.8rem;
+    }
+
+    @keyframes color {
+        0% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+        8% {
+            opacity: 0;
+        }
+        13% {
+            opacity: 1;
+        }
+        87% {
+            opacity: 1;
+        }
+        92% {
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(-5%);
+            opacity: 0;
+        }
+    }
+    @keyframes gray {
+        0% {
+            transform: translateX(0) scale(1);
+            opacity: 0;
+        }
+        8% {
+            opacity: 0;
+        }
+        13% {
+            opacity: .2;
+        }
+        87% {
+            opacity: .2;
+        }
+        92% {
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(5%) scale(1.1);
+            opacity: 0;
+        }
+    }
+    @keyframes text {
+        0% {
+            transform: scale(1);
+            opacity: 0;
+        }
+        8% {
+            opacity: 0;
+        }
+        13% {
+            opacity: 1;
+        }
+        87% {
+            opacity: 1;
+        }
+        92% {
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1.1);
+            opacity: 0;
+        }
+    } 
+    @media (orientation: landscape) {
+        .team .color {
+        right: 5%;
+        height: 55%;
+    }
+    .team .gray {
+        left: -15%;
+        bottom: -10%;
+        height: 130%;
+    }
+    .team .member {
+        width: 60%;
+        right: 0%;
+        left: auto;
+    }
+    }
+    @media (min-width: 1025px) {
+        .team h1 {
+        font-size: 6rem;
+    }
+    .team h2 {
+        font-size: 4rem;
+    }  
+    }
+ </style>
+</head>
+
+<body>
+ <section class="team">
+  <img src="img/s1.png" alt="dziewczyna 1 kolor" class="color">
+  <img src="img/s1a.png" alt="dziewczyna 1 szara" class="gray">
+  <div class="member">
+   <h1>Anna Baugart</h1>
+   <h2>Programistka JS</h2>
+  </div>
+ </section>
+ <script>
+    let activeElement = 0;
+    const timeChange = 4000;
+
+    const colorImgHtml = document.querySelector('.color');
+    const grayImgHtml = document.querySelector('.gray');
+    const h1Html = document.querySelector('.member h1');
+    const h2Html = document.querySelector('.member h2');
+
+    const colorImages = ['img/s1.png', 'img/s2.png', 'img/s3.png'];
+    const grayImages = ['img/s1a.png', 'img/s2a.png', 'img/s3a.png'];
+    const names = ['Anna Baugart', 'Marek Feliksiak', 'Arek Pawłowicz'];
+    const professions = ['Programistka JS','UX i UI Designer', 'Frond-End Developer'];
+ 
+    function changeElement() {
+        activeElement++;
+
+        if(activeElement == colorImages.length) {
+            activeElement = 0;
+        }
+
+        colorImgHtml.src = colorImages[activeElement];
+        grayImgHtml.src = grayImages[activeElement];
+        h1Html.textContent = names[activeElement];
+        h2Html.textContent = professions[activeElement];
+    }
+    setInterval(changeElement, timeChange)
+ 
+ </script>
+</body>
+
+</html>
