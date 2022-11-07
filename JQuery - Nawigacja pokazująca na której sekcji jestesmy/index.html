@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu kropki</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        section {
+            width: 80%;
+            margin: 0 auto;
+            min-height: 50vh;
+        }
+
+        .s1 {
+            background-color: cadetblue;
+            height: 120vh;
+        }
+        .s2 {
+            background-color: rgb(57, 202, 124);
+            height: 80vh;
+        }
+        .s3 {
+            background-color: rgb(141, 249, 53);
+
+        }
+        .s4 {
+            background-color: rgb(255, 96, 43);
+            height: 140vh;
+        }
+        nav {
+            position: fixed;
+            top: 30%;
+            bottom: 30%;
+            left: 2%;
+            width: 60px;
+            background-color: rgb(226, 226, 226);
+            border-radius: 20px;
+        }
+        nav ul {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav li {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            transition: .5s;
+        }
+
+        .dot1 {
+            background-color: cadetblue;
+        }
+        .dot2 {
+            background-color: rgb(57, 202, 124);
+        }
+        .dot3 {
+            background-color: rgb(141, 249, 53);
+        }
+        .dot4 {
+            background-color: rgb(255, 96, 43);
+        }
+        li.active {
+            box-shadow: 0 0 0 5px rgb(226, 226, 226), 0 0 0 8px rgb(255, 72, 72);
+        }
+    </style>
+</head>
+<body>
+    <section class="s1"></section>
+    <section class="s2"></section>
+    <section class="s3"></section>
+    <section class="s4"></section>
+    <nav><ul>
+        <li class="dot1"></li>
+        <li class="dot2"></li>
+        <li class="dot3"></li>
+        <li class="dot4"></li>
+    </ul></nav>
+    <script src="JQuery.js"></script>
+    <script>
+        $(window).on('scroll', changeDot)
+        function changeDot () {
+            const scrollValue = $(window).scrollTop();
+           const heightS2 = $('.s2').offset().top;
+           const heightS3 = $('.s3').offset().top;
+           const heightS4 = $('.s4').offset().top;
+           if (scrollValue < heightS2) {
+            $('li').not('.dot1').removeClass('active')
+            $('.dot1').addClass('active')
+           }
+           else if (scrollValue < heightS3) {
+            $('li').not('.dot2').removeClass('active')
+            $('.dot2').addClass('active')
+           }
+           else if (scrollValue < heightS4) {
+            $('li').not('.dot3').removeClass('active')
+            $('.dot3').addClass('active')
+           }
+           else {
+            $('li').not('.dot4').removeClass('active')
+            $('.dot4').addClass('active')
+           }
+        }
+
+
+
+
+    </script>
+</body>
+</html>
