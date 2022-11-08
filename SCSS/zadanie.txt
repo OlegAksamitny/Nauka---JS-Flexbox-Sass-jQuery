@@ -1,0 +1,6 @@
+Zamień wszystkie potrzebne style w plikach
+- _variables.scss
+- _mixins.scss
+_ _nav1.scss
+
+na składnie zgodną z formatem scss

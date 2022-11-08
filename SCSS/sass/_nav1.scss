@@ -1,0 +1,25 @@
+* {
+ margin: 0
+}
+
+nav {
+ ul {
+  @include box-flex(row, space-around);
+  list-style-type: none;
+  li {
+   width: 20%;
+   a {
+    display: block
+    text-align: center
+    text-decoration: none
+    background-color: #000000
+    color: $color-font
+    font-family: arial
+    line-height: 50px
+    text-transform: uppercase
+    &:hover
+     background-color: red 
+   }
+}
+}
+}
